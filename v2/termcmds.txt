@@ -1,5 +1,0 @@
-
-
-clang++ --std=c++23 src/main.cpp src/initialize.cpp src/screen.cpp src/drawFrame.cpp -o foo.exe
-
-clang++ -O3 -march=native --std=c++23 src/main.cpp src/initialize.cpp src/screen.cpp src/drawFrame.cpp -o foo.exe
