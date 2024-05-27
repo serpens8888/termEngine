@@ -3,7 +3,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <conio.h>
+
+
 
 static int cols = 100;
 static int rows = 50;
