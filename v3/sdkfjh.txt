@@ -1,0 +1,1 @@
+clang++ --std=c++23 -o foo.exe src/main.cpp src/initialize.cpp src/screen.cpp src/primitives.cpp

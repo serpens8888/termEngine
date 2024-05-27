@@ -13,6 +13,7 @@ int arrayAccess(int col, int row){
 
 std::string render(std::vector<std::string> pixels){
 	std::string frame;
+	frame.reserve(pixels.size()+rows);
 	for(int i = 0;i<pixels.size()-1;i++){
 		frame.append(pixels[i]);
 		if(i!=0&&(i+1)%cols==0){

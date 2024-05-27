@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <conio.h>
 
 static int cols = 100;
 static int rows = 50;
@@ -13,3 +14,5 @@ static int rows = 50;
 #define colorDirect(pos,r,g,b) frame[pos].replace(7,3,r);\
 			  frame[pos].replace(11,3,g);\
 			  frame[pos].replace(15,3,b);
+
+inline std::vector<std::string> frame;
