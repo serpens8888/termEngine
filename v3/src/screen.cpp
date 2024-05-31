@@ -27,6 +27,12 @@ std::string render(std::vector<std::string> pixels){
 }
 
 void color(int col, int row, std::string r, std::string g, std::string b){
+	if(col>cols-1){
+		col = col%(cols-1);
+	}
+	if(row>rows-1){
+		row = row%(rows-1);
+	}
 	frame[index(col,row)].replace(7,3,r);
 	frame[index(col,row)].replace(11,3,g);
 	frame[index(col,row)].replace(15,3,b);
