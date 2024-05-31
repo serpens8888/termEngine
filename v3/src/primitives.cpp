@@ -1,25 +1,46 @@
 #include "primitives.hpp"
 
-Hline::Hline(int x1, int x2, int y, std::string r, std::string g, std::string b){
-	if(x1<0){ x1=(cols-1)-(-(x1%(cols-1))); }
-	if(x1>cols-1){ x1=x1%(cols-1); }
-	if(x2<0){ x2 = (cols-1)-(-(x2%cols-1)); }
-	if(x2>cols-1){ x2=x2%(cols-1); }
-	if(y<0){ y=(rows-1)-(-(y%rows-1)); }
-	if(y>rows-1){ y=y%(rows-1); }
-for(int i = 0;i<x2-x1+1;i++){
+
+
+
+int wrapX(int x){
+	if(x>cols){
+		x = x%(cols);
+	}
+	if(x<0){
+		x = (cols)-((-x)%(cols));
+	}
+return x;
+}
+
+int wrapY(int y){
+	if(y>rows){
+		y = y%(rows);
+	}
+	if(y<0){
+		y = (rows)-(-(y%rows));
+	}
+return y;
+}
+
+
+
+
+
+Hline::Hline(int x1, int x2, int y, int r, int g, int b){
+	x1 = wrapX(x1);
+	x2 = wrapX(x2);
+	y = wrapY(y);
+	for(int i = 0;i<x2-x1+1;i++){
 		color(x1+i,y,r,g,b);
 	}
 }
 
-Vline::Vline(int y1, int y2, int x, std::string r, std::string g, std::string b){
-	if(y1<0){ y1=(rows-1)-(-(y1%(rows-1))); }
-	if(y1>rows-1){ y1=y1%(rows-1); }
-	if(y2<0){ y2 = (rows-1)-(-(y2%rows-1)); }
-	if(y2>rows-1){ y2=y2%(rows-1); }
-	if(x<0){ x=(cols-1)-(-(x%cols-1)); }
-	if(x>cols-1){ x=x%(cols-1); }
-for(int i = 0;i<y2-y1+1;i++){
+Vline::Vline(int y1, int y2, int x, int r, int g, int b){
+	y1 = wrapY(y1);
+	y2 = wrapY(y2);
+	x = wrapX(x);
+	for(int i = 0;i<y2-y1+1;i++){
 		color(x,y1+i,r,g,b);
 	}
 }

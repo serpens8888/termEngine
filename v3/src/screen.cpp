@@ -26,14 +26,37 @@ std::string render(std::vector<std::string> pixels){
 	return frame;
 }
 
-void color(int col, int row, std::string r, std::string g, std::string b){
+std::string colorPad(std::string color){
+	if(color.length()==1){
+		color.insert(0,"00");
+	}
+	else if(color.length()==2){
+		color.insert(0,"0");
+	}
+	return color;
+}
+
+void color(int col, int row, int r, int g, int b){
 	if(col>cols-1){
 		col = col%(cols-1);
 	}
 	if(row>rows-1){
 		row = row%(rows-1);
 	}
-	frame[index(col,row)].replace(7,3,r);
-	frame[index(col,row)].replace(11,3,g);
-	frame[index(col,row)].replace(15,3,b);
+	if(r>255) { r = r%255; }
+	if(g>255) { g = g%255; }
+	if(b>255) { b = b%255; }
+	if(r<0) { r = 255-((-r)%255); }
+	if(g<0) { g = 255-((-r)%255); }
+	if(b<0) { b = 255-((-r)%255); }
+	std::string a = std::to_string(r);
+	std::string c = std::to_string(g);
+	std::string d = std::to_string(b);
+	a = colorPad(a);
+	c = colorPad(c);
+	d = colorPad(d);
+
+	frame[index(col,row)].replace(7,3,a);
+	frame[index(col,row)].replace(11,3,c);
+	frame[index(col,row)].replace(15,3,d);
 }
