@@ -1,5 +1,7 @@
+#pragma once
 #include "globals.hpp"
 
-std::vector<std::string> pixel();
+std::vector<std::string> pixels();
+int index(int col, int row);
 std::string render(std::vector<std::string> pixels);
-int arrayAccess(int col, int row);
+void color(int col, int row, std::string r, std::string g, std::string b);
