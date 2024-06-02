@@ -44,3 +44,36 @@ Vline::Vline(int y1, int y2, int x, int r, int g, int b){
 		color(x,y1+i,r,g,b);
 	}
 }
+
+rect::rect(int x1, int y1, int x2, int y2, int r, int g, int b){
+	x1=wrapX(x1);
+	y1=wrapY(y1);
+	x2=wrapX(x2);
+	y2=wrapY(y2);
+
+	for(int i = 0;i<y2-y1+1;i++){
+		Hline temp(x1,x2,y1+i,r,g,b);
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

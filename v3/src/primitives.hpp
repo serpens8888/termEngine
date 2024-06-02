@@ -29,3 +29,14 @@ public:
 	Vline(int y1, int y2, int x, int r, int g, int b);
 };
 
+class rect{
+	public:
+		int x1;
+		int y1;
+		int x2;
+		int y2;
+		int r;
+		int g;
+		int b;
+		rect(int x1, int y1, int x2, int y2, int r, int g, int b);
+};
