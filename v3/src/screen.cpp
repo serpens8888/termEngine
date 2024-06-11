@@ -37,6 +37,12 @@ std::string colorPad(std::string color){
 }
 
 void color(int col, int row, int r, int g, int b){
+	if(col<0){
+		col = 0;
+	}
+	if(row<0){
+		row = 0;
+	}
 	if(col>cols-1){
 		col = col%(cols-1);
 	}
@@ -55,7 +61,7 @@ void color(int col, int row, int r, int g, int b){
 	a = colorPad(a);
 	c = colorPad(c);
 	d = colorPad(d);
-
+	
 	frame[index(col,row)].replace(7,3,a);
 	frame[index(col,row)].replace(11,3,c);
 	frame[index(col,row)].replace(15,3,d);
