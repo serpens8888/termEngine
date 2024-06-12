@@ -124,12 +124,13 @@ circle::circle(int midpointX, int midpointY, int radius, int r, int g, int b)
 
 	std::vector<int> circleAABB = makeAABB(midpointX-radius, midpointY-radius, midpointX+radius, midpointY+radius);
 	for(int i = 0;i<circleAABB.size();i++){
-		if(sqrt(((midpointX-circleAABB[i])*(midpointX-circleAABB[i])) + ((midpointY-circleAABB[i+1])*(midpointY-circleAABB[i+1])))<radius){
-			color(circleAABB[i+1], circleAABB[i],r,g,b);
+		if(sqrt((
+			(midpointX-circleAABB[i]) * (midpointX-circleAABB[i])) +
+			((midpointY-circleAABB[i+1]) * (midpointY-circleAABB[i+1])))<radius){
+				color(circleAABB[i], circleAABB[i+1],r,g,b);
      		}
 	}
 }
-
 
 
 
