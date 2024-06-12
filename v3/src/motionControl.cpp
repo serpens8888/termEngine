@@ -11,3 +11,9 @@ int pulse(int max, int start,int step, int x){
 	}
 	return pulsar[x%pulsar.size()];
 }
+
+
+
+int sine(int amplitude, int period, int lr, int ud, int x){
+	return (amplitude*(sin((period*x)+lr)))+ud;
+}
