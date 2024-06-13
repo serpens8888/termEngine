@@ -3,6 +3,13 @@
 
 int pulse(int max, int start, int x){
 	std::vector<int> pulsar((max-1)*2);
+	if(max == 2){
+		if(x%2==0){
+			return 1;
+		}
+		else
+			return 2;
+	}
 	for(int i = 0;i<=max-start+1;i++){
 		pulsar[i] = start+i;
 	}

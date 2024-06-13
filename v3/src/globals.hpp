@@ -8,8 +8,10 @@
 #include <chrono>
 #include <ranges>
 #include <cmath>
+#include <functional>
 
 static int cols = 100;
 static int rows = cols/2;
 
 inline std::vector<std::string> frame;
+

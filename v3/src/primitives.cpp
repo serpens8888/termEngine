@@ -71,7 +71,7 @@ std::vector<int> makeAABB(int topLeftX, int topLeftY, int bottomRightX, int bott
 	std::vector<int> y(bottomRightY-topLeftY+1);
 	std::vector<int> final(x.size()*y.size());
 
-	std::ranges::iota(x.begin(), x.end(), topLeftX);
+	std::ranges::iota(x.begin(),x.end(),topLeftX);
 	std::ranges::iota(y.begin(), y.end(), topLeftY);
 
      	for(int i : y ){
@@ -126,7 +126,7 @@ circle::circle(int midpointX, int midpointY, int radius, int r, int g, int b)
 	for(int i = 0;i<circleAABB.size();i++){
 		if(sqrt((
 			(midpointX-circleAABB[i]) * (midpointX-circleAABB[i])) +
-			((midpointY-circleAABB[i+1]) * (midpointY-circleAABB[i+1])))<radius){
+			((midpointY-circleAABB[i+1]) * (midpointY-circleAABB[i+1])))<=radius){
 				color(circleAABB[i], circleAABB[i+1],r,g,b);
      		}
 	}
